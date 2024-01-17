@@ -8,24 +8,6 @@
     <script src="/js/main.js"></script>
 </head>
 <body>
-    <p>Get your student <a href="/student">here</a></p>
-    <h1>Spring Boot!</h1>
-   
-    <h3 th:text="'Today is: ' + ${date}"></h3>
-    
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Email</th>
-            <th>Group</th>
-        </tr>
-        <tr th:each="student : ${students}">
-            <td th:text="${student.name}"></td>
-            <td th:text="${student.surname}"></td>
-            <td th:text="${student.email}"></td>
-            <td th:text="${student.group}"></td>
-        </tr>
-    </table>
+    <h1 th:text="${result}"></h1>
 </body>
 </html>

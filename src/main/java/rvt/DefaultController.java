@@ -2,6 +2,7 @@ package rvt;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -14,20 +15,22 @@ public class DefaultController {
     
     @GetMapping(value = "/")
     ModelAndView index(@RequestParam(name="name", required=false, defaultValue="null") String name) {
-        Student student = new Student("John", "Smith", "a@a.lv", "DP2-4");
-        List<Student> students = new ArrayList<>();
-        students.add(student);
+        Money a = new Money(3, 80);
+        Money b = new Money(3, 0);
 
         ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("students", students);
-        modelAndView.addObject("date", new Date().toString());
+        modelAndView.addObject("result", a.plus(b));
         return modelAndView;
     }
 
     @GetMapping(value = "/about")
-    ModelAndView about(){
+    ModelAndView about(@RequestParam HashMap<String, String> allParams){
         ModelAndView modelAndView = new ModelAndView("about");
 
+        System.out.println(allParams.get("id"));
+        System.out.println(allParams.get("title"));
+        System.out.println(allParams.get("description"));
+        
         return modelAndView;
     }
 }
