@@ -1,9 +1,6 @@
 package rvt;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,11 +12,8 @@ public class DefaultController {
     
     @GetMapping(value = "/")
     ModelAndView index(@RequestParam(name="name", required=false, defaultValue="null") String name) {
-        Money a = new Money(3, 80);
-        Money b = new Money(3, 0);
 
         ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("result", a.plus(b));
         return modelAndView;
     }
 
@@ -31,6 +25,23 @@ public class DefaultController {
         System.out.println(allParams.get("title"));
         System.out.println(allParams.get("description"));
         
+        return modelAndView;
+    }
+
+    @GetMapping(value = "/test")
+    ModelAndView testAction(@RequestParam HashMap<String, String> allParams) {
+
+        ModelAndView modelAndView = new ModelAndView("test");
+
+        Money mon1 = new Money(3, (byte) 80);
+        Money mon2 = new Money(2);
+        Money mon3 = new Money();
+
+        mon3 = mon3.plus(1);
+        mon3 = mon3.plus((byte) 20);
+
+        modelAndView.addObject("result", "Result: " + mon1.plus(mon2.plus(mon3)));
+
         return modelAndView;
     }
 }
