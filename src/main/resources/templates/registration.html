@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <title>Registration</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form action="/register">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Ievadi savu vārdu">
+
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" placeholder="Ievadi savu uzvārdu">
+
+        <label for="group">Group:</label>
+        <select name="group" id="group">
+            <option value="DP2-1">DP2-1</option>
+            <option value="DP2-2">DP2-2</option>
+            <option value="DP2-3">DP2-3</option>
+            <option value="DP2-4">DP2-4</option>
+        </select>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" placeholder="Ievadi e-pastu:">
+
+        <input type="submit" value="Register" class="btn">
+    </form>
+</body>
+</html>

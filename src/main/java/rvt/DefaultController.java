@@ -1,5 +1,6 @@
 package rvt;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 import org.springframework.stereotype.Controller;
@@ -33,14 +34,17 @@ public class DefaultController {
 
         ModelAndView modelAndView = new ModelAndView("test");
 
-        Money mon1 = new Money(3, (byte) 80);
-        Money mon2 = new Money(2);
-        Money mon3 = new Money();
+        int[] numbers = {8, 3, 7, 9, 1, 2, 4};
+        Sorter.sort(numbers);
 
-        mon3 = mon3.plus(1);
-        mon3 = mon3.plus((byte) 20);
+        modelAndView.addObject("result", "Result: " + Arrays.toString(numbers));
+        return modelAndView;
+    }
 
-        modelAndView.addObject("result", "Result: " + mon1.plus(mon2.plus(mon3)));
+    @GetMapping(value = "/register")
+    public ModelAndView registerPage(){
+
+        ModelAndView modelAndView = new ModelAndView("registration");
 
         return modelAndView;
     }

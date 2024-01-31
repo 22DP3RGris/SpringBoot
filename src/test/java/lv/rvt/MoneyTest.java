@@ -1,6 +1,7 @@
 package lv.rvt;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
@@ -90,11 +91,12 @@ public class MoneyTest {
     @Test
     public void testEqualsMethod(){
 
-        Money mon1 = new Money(1, (byte) 0);
-        Money mon2 = new Money(1, (byte) 0);
+        Money mon1 = new Money(1, (byte) 1);
+        Money mon2 = new Money(1, (byte) 1);
+        Money mon3 = new Money(1, (byte) 2);
 
-        Boolean result1 = mon1.equals(mon2);
-
-        assertEquals(true, result1);
+        assertEquals(mon1, mon2);
+        assertNotEquals(mon1, mon3);
     }
+
 }

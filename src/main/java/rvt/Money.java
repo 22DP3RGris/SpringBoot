@@ -31,9 +31,17 @@ public class Money {
     }
 
     @Override 
-    public boolean equals(Object obj)
+    public boolean equals(Object compared)
     {
-        Money mon = (Money) obj;
+        if (this == compared) {
+            return true;
+        }
+
+        if (!(compared instanceof Money)) {
+            return false;
+        }
+
+        Money mon = (Money) compared;
         return this.euros == mon.euros && this.cents == mon.cents;
     }
 
