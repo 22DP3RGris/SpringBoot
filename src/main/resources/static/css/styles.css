@@ -8,6 +8,22 @@ body {
     height: 100;
     background-color: blanchedalmond;
 }
+h2 {
+    text-align: center;
+    color: darkslategray;
+    background-color: blanchedalmond;
+    font-size: 36px;
+    padding: 10px 5px;
+    margin: 2px;
+}
+
+a{
+    text-decoration: none;
+    color: lightskyblue;
+}
+
+
+
 h1 {
     text-align: center;
     color: darkslategray;
@@ -68,6 +84,24 @@ input {
     margin-left: auto;
 }
 
+.text-danger {
+    color: red;
+    padding: 7px;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+input[type="date"] {
+    padding: 10px 45px;
+}
+
+#gender{
+    padding: 10px 77px;
+}
+
 select {
     border: solid;
     border-color: rgb(247, 203, 133);
@@ -94,6 +128,17 @@ label{
     margin-top: 5px;
     display: block;
     text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+textarea{
+    border: solid;
+    border-color: rgb(247, 203, 133);
+    padding: 10px;
+    display: block;
+    text-align: center;
+    font-size: 18px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -125,5 +170,6 @@ label{
     font-size: 30px;
     color: darkslategray;
 }
+
 
 
